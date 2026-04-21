@@ -9,9 +9,11 @@ class InitialPage:
         self.url = url
         self.timeout = timeout
 
-    def home_page(self):
+    def home_page(self) -> bool:
         try:
             self.page.goto(self.url)
 
         except Exception as e:
             return
+        
+        
