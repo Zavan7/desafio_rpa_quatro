@@ -12,8 +12,9 @@ class InitialPage:
     def home_page(self) -> bool:
         try:
             self.page.goto(self.url)
-
+            return True
+        
         except Exception as e:
-            return
+            return False
         
         

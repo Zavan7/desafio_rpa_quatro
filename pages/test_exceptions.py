@@ -10,11 +10,17 @@ class TestExceptions:
         self.timeout = timeout
 
     def test_exceptions(self) -> bool:
-        self.page.wait_for_selector(self.selector_test, timeout=self.timeout)
-
-        test_button = self.page.locator(self.selector_test)
-
-        if not test_button.is_enabled():
-            return False
         
-        test_button.click()
+        try:
+            self.page.wait_for_selector(self.selector_test, timeout=self.timeout)
+
+            test_button = self.page.locator(self.selector_test)
+
+            if not test_button.is_enabled():
+                return False
+            
+            test_button.click()
+            return True
+        
+        except Exception as e:
+            return False
