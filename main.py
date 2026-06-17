@@ -5,7 +5,11 @@ from pages.click_test import ClickTest
 
 
 from playwright.sync_api import sync_playwright
+
+from config.log import setup_logging
 import time
+
+setup_logging()
 
 time_stamp = 2
 url = 'https://practicetestautomation.com/'

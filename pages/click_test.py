@@ -19,6 +19,7 @@ class ClickTest:
 
     def click_test (self) -> bool:
         try:
+            logger.info('4° - Click Test')
             click_test_button = self.page.locator(self.click_test_selector)
 
             click_test_button.wait_for(state='visible', timeout=self.timeout)
@@ -39,5 +40,5 @@ class ClickTest:
             return True
         
         except Exception as e:
-            logger.error('Error: ', e)
+            logger.error(f'4° - Click Test\nError: {e}')
             return False

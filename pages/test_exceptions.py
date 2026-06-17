@@ -12,6 +12,7 @@ class TestExceptions:
     def test_exceptions(self) -> bool:
         
         try:
+            logger.info('3° - Test Exceptions')
             self.page.wait_for_selector(self.selector_test, timeout=self.timeout)
 
             test_button = self.page.locator(self.selector_test)
@@ -23,4 +24,5 @@ class TestExceptions:
             return True
         
         except Exception as e:
+            logger.error(f'3° - Test Exceptions\nError: {e}')
             return False

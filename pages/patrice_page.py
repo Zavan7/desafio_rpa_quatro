@@ -12,6 +12,7 @@ class PatricePage:
 
     def patrice_page(self) -> bool:
         try:
+            logger.info('2°-  Patrice Page')
             self.page.wait_for_selector(self.selector_patrice, timeout=self.timeout)
 
             patrice_page_button = self.page.locator(self.selector_patrice)
@@ -23,4 +24,5 @@ class PatricePage:
             return True
         
         except Exception as e:
+            logger.error(f'2° - Patrice Page\nError: {e}')
             return False
